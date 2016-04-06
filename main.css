@@ -1,0 +1,120 @@
+body{
+    background: #f5f5f5;
+}
+main{
+    padding: 0px 20px 20px 20px;
+    margin-top: 100px;
+}
+.logo{
+    width: 120px;
+    margin: 5px;
+}
+.site-tools{
+    min-width: 25%;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: white;
+    border-left: 5px solid #D1D9CA;
+}
+.add-notification{
+    min-width: 25%;
+    border-left: 5px solid #D1D9CA;
+    padding: 50px;
+    margin-bottom: 20px;
+    background: white;
+    text-decoration: none;
+    list-style: none;
+}
+.add-notification p{
+    display: inline;
+    font-size: 25px;
+    text-decoration: none; 
+    color:#28363F;
+    margin-right: 20px;
+}
+.add-notification:hover{
+    color:#99B0BD;
+}
+.add-notification a{
+    text-decoration: none;
+}
+.add{
+    background: #D9B38E;
+    padding: 12px 15px;
+    border-radius: 50%;
+    color: white !important;
+}
+article{
+    min-width: 75%;
+    /*background: white; */
+}
+.guidebar1, .guidebar2{
+    padding: 4px;
+    min-height: 100%;
+    position: absolute;
+    left: 50%;
+    background: #28363F;
+    z-index: -1;
+    opacity: 0.8;
+}
+.guidebar2{
+    padding: 6px;
+    left: 55%;
+    background: #D9B38E;
+
+}
+.notificationsTitle{
+    color: #D77F4E;
+}
+
+.notification{
+    margin-bottom: 30px;
+    background: none;
+    padding-bottom: 20px;
+}
+.notification-content-wrapper{
+    opacity: 0.96;
+    background: white;
+    padding: 20px;
+}
+.notification-content{
+    margin: 20px 0px 20px 50px;
+    max-width: 75%;
+    border-left: 4px solid #D9B38E;
+    padding-left: 10px;
+    margin-left: 60px;
+}
+.notification-header{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 60px;
+   /* background: #99B0BD; */
+    background: #e0e0e0;
+    padding: 5px;
+    /*box-shadow: 0px 2px 1px #e0e0e0;*/
+}
+.notification-header h2{
+    /*color: #28363F; */
+    color: #505050;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.notification-category, .notification-date, .notification-owner, .notification-rating{
+}
+.noMore{
+    margin: 0 auto;
+    text-align: center;
+}
+.loaddata{
+   margin-left: 42%;
+    height: 45px;
+    width: 120px;
+}
+.button-holder{
+    margin: 0 auto;
+}
+@media only screen and (max-width : 768px) {
+    article{
+      padding: 20px 0px;  
+    } 
+}
