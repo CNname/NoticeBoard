@@ -32,9 +32,14 @@ $(document).ready(function(){
                 // content
                 $('.'+wrap).append('<div class="notification-content"><p>'+n[i].content+'</p></div>');
                 // Owner info
-                $('.'+wrap).append('<div class="notification-owner"><span class="glyphicon glyphicon-user"></span> '+n[i].ownerName+'<b><br>'+n[i].ownerEmail+'</b><p>'+n[i].ownerNumber+'</p></div>');
+              //  $('.'+wrap).append('<div class="notification-owner"><span class="glyphicon glyphicon-user"></span> '+n[i].ownerName+'<b><br>'+n[i].ownerEmail+'</b><p>'+n[i].ownerNumber+'</p></div>');
+                if( n[i].ownerImage.length != 0 ){
+                  $('.'+noti).append('<div class="notification-owner"><img class="notification-owner-image" src="'+n[i].ownerImage+'"/><p><b> '+n[i].ownerName+'</b></p></div>');
+                }else{
+                    $('.'+noti).append('<div class="notification-owner"><img class="notification-owner-image" src="assets/blankProfile.PNG"/><p><b> '+n[i].ownerName+'</b></p></div>');
+                }
                 // rating
-                $('.'+wrap).append('<div class="notification-rating"><p>'+n[i].rating+'</p></div>');
+                //$('.'+wrap).append('<div class="notification-rating"><p>'+n[i].rating+'</p></div>');
                 $.scrollLock( true );
                 $('.'+noti).show('easing');
             }else{
@@ -51,6 +56,11 @@ $(document).ready(function(){
             init += 5;
        }
     }
+   showAddNew = function(){
+       $('.add-notification').empty();
+       $('.add-notification').append('<div class="add-new-notification"><form><div class="form-group"><div class="add-new-wrapper"><input type="text" class="form-control" placeholder="Otsikko"></div></div><div class="form-group"><textarea class="form-control add-text" rows="3" placeholder="Sisältö"></textarea></div></form></div></div>');
+       $('.add-new-notification');
+   }
 });
 //http://www.sitepoint.com/implementing-infinite-scroll-jquery/
     

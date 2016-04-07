@@ -3,22 +3,31 @@ body{
 }
 main{
     padding: 0px 20px 20px 20px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .logo{
     width: 120px;
     margin: 5px;
+}
+.tagbox-wrapper{
+    max-width: 100%;
+    padding: 150px;
+    background: #28363F;
+}
+.tagline, .taglineSmall{
+    margin: 0 auto;
+    color: white;
 }
 .site-tools{
     min-width: 25%;
     padding: 20px;
     margin-bottom: 20px;
     background: white;
-    border-left: 5px solid #D1D9CA;
+    border-left: 5px solid #28363F;
 }
 .add-notification{
     min-width: 25%;
-    border-left: 5px solid #D1D9CA;
+    border-left: 5px solid #D77F4E;
     padding: 50px;
     margin-bottom: 20px;
     background: white;
@@ -39,17 +48,21 @@ main{
     text-decoration: none;
 }
 .add{
-    background: #D9B38E;
+    background: #D77F4E;
     padding: 12px 15px;
     border-radius: 50%;
     color: white !important;
+}
+
+.add-text{
+    max-width: 100%;
 }
 article{
     min-width: 75%;
     /*background: white; */
 }
 .guidebar1, .guidebar2{
-    padding: 4px;
+    padding: 7px;
     min-height: 100%;
     position: absolute;
     left: 50%;
@@ -58,8 +71,8 @@ article{
     opacity: 0.8;
 }
 .guidebar2{
-    padding: 6px;
-    left: 55%;
+    padding: 4px;
+    left: 53%;
     background: #D9B38E;
 
 }
@@ -82,7 +95,7 @@ article{
     max-width: 75%;
     border-left: 4px solid #D9B38E;
     padding-left: 10px;
-    margin-left: 60px;
+    margin-left: 30px;
 }
 .notification-header{
     margin-bottom: 10px;
@@ -99,22 +112,49 @@ article{
     margin-top: 10px;
     margin-left: 10px;
 }
-.notification-category, .notification-date, .notification-owner, .notification-rating{
+.notification-owner {
+    padding: 10px;
+    max-width: 100%;
+  /*  border-top:3px solid #D2D9C9; */
+    margin-top: 10px;
+    background: white;
+    opacity: 0.96;
+    width: 50%;
+    border-radius: 0 0 0 25px;
+}
+.notification-owner p{
+   width: 300px;
+   display: inline;
+}
+.notification-owner-image{
+    max-width: 40px;
+    border-radius: 50%;
+    display: inline;
 }
 .noMore{
     margin: 0 auto;
     text-align: center;
 }
 .loaddata{
-   margin-left: 42%;
+    margin: 0 auto;
     height: 45px;
     width: 120px;
 }
 .button-holder{
     margin: 0 auto;
+    width:200px;
+}
+.button-holder button{
+    border-color: #28363F;
+    width: 200px;
 }
 @media only screen and (max-width : 768px) {
-    article{
-      padding: 20px 0px;  
-    } 
+    .notification-owner {
+        width: 100%;
+        border-radius: 0 0  0 25px;
+        margin-top: 5px;
+    }
+    .guidebar2{
+        left: 60%;
+    }
 }
