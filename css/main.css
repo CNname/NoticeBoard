@@ -2,17 +2,32 @@ body{
     background: #f5f5f5;
 }
 main{
-    padding: 0px 20px 20px 20px;
+    padding: 0px 20px 0px 20px;
     margin-top: 50px;
 }
 .logo{
     width: 120px;
     margin: 5px;
 }
+.navbar-default .navbar-nav > li > a:hover{
+    color: #D77F4E;
+}
+.navbar-brand{
+    padding: 2px;
+}
 .tagbox-wrapper{
-    max-width: 100%;
+   max-width: 100%;
     padding: 150px;
-    background: #28363F;
+    background: 
+        linear-gradient(
+            rgba(0,0,0,.2), 
+            rgba(0,0,0,.6)
+        ), 
+        #28363F;
+    -webkit-background-size: cover;
+}
+.add-new-notification{
+    height: 0%;
 }
 .tagline, .taglineSmall{
     margin: 0 auto;
@@ -20,7 +35,7 @@ main{
 }
 .site-tools{
     min-width: 25%;
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 20px;
     background: white;
     border-left: 5px solid #28363F;
@@ -28,7 +43,7 @@ main{
 .add-notification{
     min-width: 25%;
     border-left: 5px solid #D77F4E;
-    padding: 50px;
+    padding: 30px;
     margin-bottom: 20px;
     background: white;
     text-decoration: none;
@@ -40,9 +55,6 @@ main{
     text-decoration: none; 
     color:#28363F;
     margin-right: 20px;
-}
-.add-notification:hover{
-    color:#99B0BD;
 }
 .add-notification a{
     text-decoration: none;
@@ -58,7 +70,7 @@ main{
     max-width: 100%;
 }
 article{
-    min-width: 75%;
+    min-width: 70%;
     /*background: white; */
 }
 .guidebar1, .guidebar2{
@@ -68,11 +80,11 @@ article{
     left: 50%;
     background: #28363F;
     z-index: -1;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 .guidebar2{
     padding: 4px;
-    left: 53%;
+    left: 45%;
     background: #D9B38E;
 
 }
@@ -84,6 +96,7 @@ article{
     margin-bottom: 30px;
     background: none;
     padding-bottom: 20px;
+    max-width: 100%;
 }
 .notification-content-wrapper{
     opacity: 0.96;
@@ -93,7 +106,7 @@ article{
 .notification-content{
     margin: 20px 0px 20px 50px;
     max-width: 75%;
-    border-left: 4px solid #D9B38E;
+   /* border-left: 4px solid #D9B38E; */
     padding-left: 10px;
     margin-left: 30px;
 }
@@ -123,6 +136,7 @@ article{
     border-radius: 0 0 0 25px;
 }
 .notification-owner p{
+    display: inline;
    width: 300px;
 }
 .notification-owner-image{
@@ -133,18 +147,39 @@ article{
 .noMore{
     margin: 0 auto;
     text-align: center;
+    background-color: white;
+    width: 300px;
+    height: 50px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 .loaddata{
     margin: 0 auto;
     height: 45px;
     width: 120px;
+    border-color: #e0e0e0;
+    width: 200px;
+}
+.loaddata:hover{
+    border-color: #D9B38E;
+    background-color: white;
 }
 .button-holder{
     margin: 0 auto;
     width:200px;
+    margin-bottom: 20px;
 }
-.button-holder button{
-    border-color: #28363F;
+
+footer{
+    height: 60px;
+    background-color: #28363F;
+    color: white;
+    width: 100%;
+    padding-top: 20px;
+    opacity: 0.9;
+}
+footer p{
+    margin: 0 auto;
     width: 200px;
 }
 @media only screen and (max-width : 768px) {
@@ -155,5 +190,8 @@ article{
     }
     .guidebar2{
         left: 60%;
+    }
+    .notification{
+        max-width: 100%;
     }
 }

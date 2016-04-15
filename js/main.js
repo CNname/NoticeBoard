@@ -1,4 +1,33 @@
+// this javascript appends too much
 $(document).ready(function(){
+    
+    /*var width = $(window).width();
+    var game = new Phaser.Game(width, 500, Phaser.CANVAS, 'animationTest', { preload: preload, create: create, update: update });
+
+
+    function preload(){
+        this.game.load.image('hillLeft', 'assets/hill.png'); 
+        this.game.load.image('hillRight', 'assets/hillRight.png'); 
+        this.game.load.image('moon', 'assets/moonSmall.png');
+    }
+    function create(){
+        this.game.stage.backgroundColor = '#28363F';
+        this.leftHill = this.game.add.sprite(0, 100,  'hillLeft');
+        this.width = $(window).width() / 2;
+        this.moon = this.game.add.sprite(this.width, 200,  'moon');
+        this.moon.anchor.setTo(0.5);
+        this.rightHill = this.game.add.sprite(700, 100, 'hillRight')
+    }
+    function update(){
+        this.width = $(window).width();
+        if(this.moon.x = 100){
+            console.log('täällä');
+       }else{
+           this.moon.x -= 1;
+       }
+        
+    }
+    */
     var init = 5;
     var i = 0;
     var n = [];
@@ -24,7 +53,7 @@ $(document).ready(function(){
                 //header
                 $('.'+noti).append('<div class=notification-header><h2>'+n[i].header+'</h2></div>');
                 //wrapper
-                 $('.'+noti).append('<div class="notification-content-wrapper '+wrap+'"></div>');
+                $('.'+noti).append('<div class="notification-content-wrapper '+wrap+'"></div>');
                 //Category
                 $('.'+wrap).append('<div class="notification-category"><p><span class="glyphicon glyphicon-chevron-right"></span>'+n[i].category+'</p></div>'); 
                 // Date & time
@@ -56,11 +85,24 @@ $(document).ready(function(){
             init += 5;
        }
     }
-   showAddNew = function(){
-       $('.add-notification').empty();
-       $('.add-notification').append('<div class="add-new-notification"><form><div class="form-group"><div class="add-new-wrapper"><input type="text" class="form-control" placeholder="Otsikko"></div></div><div class="form-group"><textarea class="form-control add-text" rows="3" placeholder="Sisältö"></textarea></div></form></div></div>');
-       $('.add-new-notification');
-   }
+    $(document).on( "click",".hideAddNew", function(s) {
+        s.preventDefault();
+        $('.add-notification').empty();
+        $('.add-notification').append('<a href="#" class="showAddNew"><p>Lisää ilmoitus</p><p class="glyphicon glyphicon-plus add"></p></a>');
+    }); 
+   
+    $(document).on( "click",".showAddNew", function(e) {
+        e.preventDefault();
+        $('.add-notification').empty();
+        $('.add-notification').append('<div class="add-new-notification"></div>');
+        $('.add-new-notification').animate({
+            height: "189px",
+        }, { duration: 200, complete: function(){
+            $('.add-new-notification').append('<form class="notification-form"><div class="form-group"><input type="text" class="form-control" placeholder="Otsikko"></div><div class="form-group"><textarea class="form-control add-text" rows="3" placeholder="Sisältö"></textarea></div></form>');
+            $('.add-new-notification').append('<a href="#" class="hideAddNew btn btn-default">Peruuta</a>');
+            }
+        });
+    });
 });
 //http://www.sitepoint.com/implementing-infinite-scroll-jquery/
-    
+      
