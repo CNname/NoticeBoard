@@ -9,8 +9,17 @@ main{
     width: 120px;
     margin: 5px;
 }
+.settings-wrapper{
+    margin-top: 60px; 
+}
+.settings-wrapper h1{
+    font-size: 25px;
+}
 .navbar-default .navbar-nav > li > a:hover{
     color: #D77F4E;
+}
+.searchButton{
+    width: 200px;
 }
 .navbar-brand{
     padding: 2px;
@@ -23,7 +32,7 @@ main{
             rgba(0,0,0,.2), 
             rgba(0,0,0,.6)
         ), 
-        #28363F;
+        url('../assets/asdasd.jpg') 0% 69%;
     -webkit-background-size: cover;
 }
 .add-new-notification{
@@ -39,6 +48,23 @@ main{
     margin-bottom: 20px;
     background: white;
     border-left: 5px solid #28363F;
+    box-shadow: 2px 2px 3px #e0e0e0;
+}
+.payment-wrapper{
+     border-left: 5px solid #D77F4E;
+    box-shadow: 2px 2px 3px #e0e0e0;
+     padding: 30px;
+    margin-bottom: 20px;
+    background: white;
+    max-width: 100%;
+}
+.payment-button{
+    display: inline;
+    width: 100px;
+    margin-right:10px;
+}
+.accountHeader{
+    margin-top: 20px;
 }
 .add-notification{
     min-width: 25%;
@@ -48,6 +74,7 @@ main{
     background: white;
     text-decoration: none;
     list-style: none;
+    box-shadow: 2px 2px 3px #e0e0e0;
 }
 .add-notification p{
     display: inline;
@@ -65,9 +92,11 @@ main{
     border-radius: 50%;
     color: white !important;
 }
-
 .add-text{
     max-width: 100%;
+}
+.chooseNormal{
+    margin-bottom: 10px;
 }
 article{
     min-width: 70%;
@@ -102,25 +131,34 @@ article{
     opacity: 0.96;
     background: white;
     padding: 20px;
+    border: 1px solid #e0e0e0;
 }
 .notification-content{
     margin: 20px 0px 20px 50px;
     max-width: 75%;
-   /* border-left: 4px solid #D9B38E; */
-    padding-left: 10px;
     margin-left: 30px;
+}
+.notification-image > img{
+    max-width: 300px;
+    margin-left: 30px;
+}
+.fileUpload > input{
+    max-width: 100%;
+}
+.fileUpload{
+    max-width: 100%;
+}
+.btn-file{
+    max-width: 100%;
 }
 .notification-header{
     margin-bottom: 10px;
     width: 100%;
     height: 60px;
-   /* background: #99B0BD; */
     background: #e0e0e0;
     padding: 5px;
-    /*box-shadow: 0px 2px 1px #e0e0e0;*/
 }
 .notification-header h2{
-    /*color: #28363F; */
     color: #505050;
     margin-top: 10px;
     margin-left: 10px;
@@ -128,12 +166,13 @@ article{
 .notification-owner {
     padding: 10px;
     max-width: 100%;
-  /*  border-top:3px solid #D2D9C9; */
     margin-top: 10px;
     background: white;
     opacity: 0.96;
     width: 50%;
     border-radius: 0 0 0 25px;
+    border: 1px solid #e0e0e0;
+    border-right: none;
 }
 .notification-owner p{
     display: inline;
@@ -152,6 +191,10 @@ article{
     height: 50px;
     border-radius: 8px;
     margin-bottom: 20px;
+    padding: 12px;
+}
+.noMore h3{
+    margin: 0;
 }
 .loaddata{
     margin: 0 auto;
@@ -169,10 +212,55 @@ article{
     width:200px;
     margin-bottom: 20px;
 }
-
+.publish{
+    margin-left: 10px;
+}
+.settings-desc{
+    display: inline;
+    margin-left: 10px;
+    font-size: 15px
+}
+.profilePicture{
+    width: 40px;
+    margin: 0;
+    position: absolute;
+    left: -36px;
+    top: 5px;
+    border-radius: 50%;
+}
+.settings{
+    margin-top: 10px;
+}
+.account > div {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 25px 25px 0;
+    width: 200px;
+    margin-bottom: 10px;
+}
+.settings-username{
+    /*max-width: 200px; */
+}
+.account-type{
+    display: inline;
+}
+.normal, .premium, .advertiser{
+    border-radius: 50%;
+    background:#B0D7D2;
+    width: 20px;
+    float: right;
+   /* display: inline-block; */
+    height: 20px;
+}
+.premium{
+    background:#3D6D71;
+}
+.advertiser{
+    background: #1C3A3E;
+}
 footer{
     height: 60px;
-    background-color: #28363F;
+    background-color:#0A0C0E;
     color: white;
     width: 100%;
     padding-top: 20px;
@@ -182,11 +270,55 @@ footer p{
     margin: 0 auto;
     width: 200px;
 }
+.owner-name, .owner-email, .owner-number{
+    display: inline;
+    margin-left: 10px;
+}
+.short{
+    position: fixed;
+    bottom: 0;
+}
+.loginModal{
+    z-index: 999;
+}
+.loginModalOption{    
+    margin: 0 auto;
+}
+.loginModalButton{
+    width: 200px ;
+}
+.removeCard{
+    float: right;
+}
+.addedCard{
+    padding: 10px;
+    background-color: #e0e0e0;
+}
+.preview{
+    padding: 10px;
+    max-width: 100%;
+    margin-top: 10px;
+    background: white;
+    opacity: 0.96;
+    max-width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 0 25px;
+}
 @media only screen and (max-width : 768px) {
     .notification-owner {
         width: 100%;
         border-radius: 0 0  0 25px;
         margin-top: 5px;
+    }
+    .changeUserName{
+     /*   width: 100px;
+        margin:10px; */
+    }
+    .settings-main-wrapper{
+        padding: 10px;
+    }
+    .add-notification, .site-tools{
+        padding: 30px 10px;
     }
     .guidebar2{
         left: 60%;
@@ -194,4 +326,33 @@ footer p{
     .notification{
         max-width: 100%;
     }
+    .tagbox-wrapper{
+        padding: 80px 50px 80px 50px;
+    }
+    .short{
+        position: absolute;
+        bottom: 0;
+        display: block;
+    }
+    .ownAccount{
+        position: relative;
+        bottom: none;
+        
+    }
+    .notification-content, .notification-image img{
+        margin: 0;
+        max-width: 100%;
+    }
+    .profilePicture{
+        display: none;
+    }
+    aside{
+        position: relative;
+        margin-top:  none;
+        top: none;
+    }
+    .accountHeader h2{
+        font-size: 20px;
+    }
 }
+

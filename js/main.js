@@ -1,33 +1,6 @@
 // this javascript appends too much
 $(document).ready(function(){
     
-    /*var width = $(window).width();
-    var game = new Phaser.Game(width, 500, Phaser.CANVAS, 'animationTest', { preload: preload, create: create, update: update });
-
-
-    function preload(){
-        this.game.load.image('hillLeft', 'assets/hill.png'); 
-        this.game.load.image('hillRight', 'assets/hillRight.png'); 
-        this.game.load.image('moon', 'assets/moonSmall.png');
-    }
-    function create(){
-        this.game.stage.backgroundColor = '#28363F';
-        this.leftHill = this.game.add.sprite(0, 100,  'hillLeft');
-        this.width = $(window).width() / 2;
-        this.moon = this.game.add.sprite(this.width, 200,  'moon');
-        this.moon.anchor.setTo(0.5);
-        this.rightHill = this.game.add.sprite(700, 100, 'hillRight')
-    }
-    function update(){
-        this.width = $(window).width();
-        if(this.moon.x = 100){
-            console.log('täällä');
-       }else{
-           this.moon.x -= 1;
-       }
-        
-    }
-    */
     var init = 5;
     var i = 0;
     var n = [];
@@ -38,6 +11,24 @@ $(document).ready(function(){
         });
         $.scrollLock( true );
         loaddata();
+    });
+    $(window).scroll(function (event) {
+        if( $(window).width() >= '992'){
+            var scroll = $(window).scrollTop();
+            if(scroll >= '345'){
+             console.log('now');
+                $('.tools').css('maring-top', '0');
+                $('.tools').css('top', '80px');
+                $('.tools').css('position','fixed');
+                $('.tools').css('width', '22.5%');
+            }else{
+                console.log('okay');
+                $('.tools').css('maring-top', '');
+                $('.tools').css('top', '');
+                $('.tools').css('position','relative');
+                $('.tools').css('width', '100%'); 
+            }
+        }
     });
     //Load JSON
    loaddata = function(){
@@ -60,6 +51,9 @@ $(document).ready(function(){
                 $('.'+wrap).append('<div class="notification-date"><p><span class="glyphicon glyphicon-time"></span><b>'+n[i].date+'</b> klo '+n[i].time+'</p></div>');
                 // content
                 $('.'+wrap).append('<div class="notification-content"><p>'+n[i].content+'</p></div>');
+                if( n[i].contentImage.length != 0 ){
+                     $('.'+wrap).append('<div class="notification-image"><img src='+n[i].contentImage+'></div>');
+                }
                 // Owner info
               //  $('.'+wrap).append('<div class="notification-owner"><span class="glyphicon glyphicon-user"></span> '+n[i].ownerName+'<b><br>'+n[i].ownerEmail+'</b><p>'+n[i].ownerNumber+'</p></div>');
                 if( n[i].ownerImage.length != 0 ){
@@ -88,7 +82,7 @@ $(document).ready(function(){
     $(document).on( "click",".hideAddNew", function(s) {
         s.preventDefault();
         $('.add-notification').empty();
-        $('.add-notification').append('<a href="#" class="showAddNew"><p>Lisää ilmoitus</p><p class="glyphicon glyphicon-plus add"></p></a>');
+        $('.add-notification').append('<a href="#" class="showAddNew" data-toggle="modal" data-target="#loginModal"><p>Lisää ilmoitus</p><p class="glyphicon glyphicon-plus add"></p></a>');
     }); 
    
     $(document).on( "click",".showAddNew", function(e) {
@@ -96,13 +90,38 @@ $(document).ready(function(){
         $('.add-notification').empty();
         $('.add-notification').append('<div class="add-new-notification"></div>');
         $('.add-new-notification').animate({
-            height: "189px",
+            height: "380px",
         }, { duration: 200, complete: function(){
-            $('.add-new-notification').append('<form class="notification-form"><div class="form-group"><input type="text" class="form-control" placeholder="Otsikko"></div><div class="form-group"><textarea class="form-control add-text" rows="3" placeholder="Sisältö"></textarea></div></form>');
+            $('.add-new-notification').append('<form class="notification-form"><div class="form-group"><input type="text" class="form-control" placeholder="Otsikko"></div><div class="form-group"><textarea class="form-control add-text" rows="9" placeholder="Sisältö"></textarea></div><div class="form-group fileUpload"><span class="btn btn-default btn-file">Lisää kuva<input type="file"></span></div></form>');
             $('.add-new-notification').append('<a href="#" class="hideAddNew btn btn-default">Peruuta</a>');
+            $('.add-new-notification').append('<a href="#" class="publish hideAddNew btn btn-default">Julkaise</a>');
             }
         });
     });
+    $(document).on( "click",".changeUserName", function(e) {
+        e.preventDefault();
+        setPreview();
+    });
+    $('.shareEmail, .shareNumber, .incognito').change(function (){
+       setPreview();
+    });
+    var setPreview = function(){
+        console.log('kävin täällä');
+         $('.preview').empty();
+            $('.preview').append('<img class="notification-owner-image" src="assets/blankProfile.PNG"/>');
+           $('.preview').append('<p class="owner-name"><b>' + $('.settings-username').val() + '</b></p>' );
+           if($('.shareEmail').prop('checked') == true){
+            $('.preview').append('<p class="owner-email">matti.myyja@gmail.com</p>' );
+        }
+        if($('.shareNumber').prop('checked') == true){
+             $('.preview').append('<p class="owner-number">04055882303</p>' );
+        }if($('.incognito').prop('checked') == true){
+             $('.preview').empty();
+            $('.preview').append('<img class="notification-owner-image" src="assets/blankProfile.PNG"/>');
+             $('.preview').append('<p class="owner-name"><b>Anonymous</b></p>' );
+        }
+    }
+   
 });
 //http://www.sitepoint.com/implementing-infinite-scroll-jquery/
       
